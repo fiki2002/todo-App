@@ -18,7 +18,7 @@ void main() => runApp(
           create:(context) => TodosProvider(),
           child:  MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
+            theme: ThemeData(    
               primarySwatch: Colors.pink,
               scaffoldBackgroundColor:  const Color(0xfff6f5ee),
             ),

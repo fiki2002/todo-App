@@ -15,7 +15,7 @@ class _MyTodoHomePageState extends State<MyTodoHomePage> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      TodoListWidget(),
+      const TodoListWidget(),
       Container(),
     ];
     return Scaffold(
