@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
 
-class TodosProvider extends ChangeNotifier {
+import '../model/todo.dart';
 
+class TodosProvider extends ChangeNotifier {
+  final List<Todo> _todos = [
+    Todo(
+        createdTime: DateTime.now(),
+        title: 'Walk the Dog',
+        description: ''' - Take her to the next street
+        - Make her pee on Malik's leg
+        - Make sure she plays with Salsa'''),
+    Todo(createdTime: DateTime.now(), title: 'Buy Food', description: ''' - Rice
+        - Beans
+        - Yam'''),
+    Todo(
+        createdTime: DateTime.now(), title: 'Code', description: ''' - Tutorials
+        - Lifesavers
+        - Cryptowatch'''),
+    Todo(
+        createdTime: DateTime.now(),
+        title: 'Visit Ola',
+        description: ''' - Talk about business
+        - Get advice on training
+      '''),
+  ];
+  //To make our list of todos public... the code below is a getter which is public and we make sure the ones that are not done yet are displayed when neccessary
+  List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
 }
