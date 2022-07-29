@@ -39,8 +39,8 @@ class TodoFormWidget extends StatelessWidget {
         maxLines: 1,
         initialValue: title,
         onChanged: onChangedTitle,
-        validator: (title) {
-          if (title!.isEmpty) {
+        validator: (String? value) {
+          if (value?.isEmpty == true) {
             return 'The title cannot be empty';
           }
           return null;
@@ -55,8 +55,8 @@ class TodoFormWidget extends StatelessWidget {
         maxLines: 3,
         initialValue: description,
         onChanged: onChangedDescription,
-        validator: (description) {
-          if (title.isEmpty) {
+        validator: (String? value) {
+          if (value?.isEmpty == true) {
             return 'You have to add a description';
           }
           return null;

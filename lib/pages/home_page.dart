@@ -32,7 +32,9 @@ class _MyTodoHomePageState extends State<MyTodoHomePage> {
         }),
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.fact_check_outlined), label: 'Todos'),
+            icon: Icon(Icons.fact_check_outlined),
+            label: 'Todos',
+          ),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.done,
