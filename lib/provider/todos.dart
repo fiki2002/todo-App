@@ -6,24 +6,31 @@ class TodosProvider extends ChangeNotifier {
   final List<Todo> _todos = [
     Todo(
         createdTime: DateTime.now(),
-        title: 'Walk the Dog',
-        description: ''' - Take her to the next street
-        - Make her pee on Malik's leg
-        - Make sure she plays with Salsa'''),
-    Todo(createdTime: DateTime.now(), title: 'Buy Food', description: ''' - Rice
+        title: 'Finish the job',
+        description: ''' 
+        - Learn a bit
+        - Rest
+        - Eat
+        '''),
+    Todo(createdTime: DateTime.now(), title: 'Buy Food', description: ''' 
+        - Rice
         - Beans
-        - Yam'''),
+        - Yam
+        '''),
     Todo(
-        createdTime: DateTime.now(), title: 'Code', description: ''' - Tutorials
+        createdTime: DateTime.now(), title: 'Code', description: '''
+        - Tutorials
         - Lifesavers
-        - Cryptowatch'''),
+        - Cryptowatch
+        '''),
     Todo(
         createdTime: DateTime.now(),
         title: 'Visit Ola',
-        description: ''' - Talk about business
+        description: '''
+        - Talk about business
         - Get advice on training
       '''),
   ];
-  //To make our list of todos public... the code below is a getter which is public and we make sure the ones that are not done yet are displayed when neccessary
+  //To make our list of todos public... the code below is a getter which is public and we make sure the ones that are not done yet are displayed where neccessary
   List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
 }

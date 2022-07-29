@@ -21,7 +21,7 @@ class TodoFormWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          buildTile(),
+          buildTitle(),
           const SizedBox(
             height: 8,
           ),
@@ -35,7 +35,7 @@ class TodoFormWidget extends StatelessWidget {
     );
   }
 
-  Widget buildTile() => TextFormField(
+  Widget buildTitle() => TextFormField(
         maxLines: 1,
         initialValue: title,
         onChanged: onChangedTitle,
@@ -74,7 +74,7 @@ class TodoFormWidget extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all(Colors.black),
           ),
           onPressed: onSavedTodo,
-          child: Text(
+          child: const Text(
             'Save',
           ),
         ),
