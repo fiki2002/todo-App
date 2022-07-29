@@ -28,7 +28,8 @@ class TodoListWidget extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             itemCount: todos.length,
             itemBuilder: (context, index) {
-              var todo = todos[index];
+              //to get each item in the todo list
+            final todo = todos[index];
 
               return TodoWidget(todo: todo);
             },
