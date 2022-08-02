@@ -30,7 +30,7 @@ class TodoWidget extends StatelessWidget {
             motion: ScrollMotion(),
             children: [
               SlidableAction(
-                onPressed: () => deleteTodo(context, todo),
+                onPressed: (context) => deleteTodo(context, todo),
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
                 icon: Icons.delete,
@@ -89,8 +89,6 @@ class TodoWidget extends StatelessWidget {
   void deleteTodo(BuildContext context, Todo todo) {
   
     final provider = Provider.of<TodosProvider>(context, listen: false);
-   provider.removeToodo(todo);
-
-   Utils.showSnackBar
+  
   }
 }
