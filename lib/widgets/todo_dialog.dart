@@ -59,6 +59,7 @@ class _AddTodoDialogWidgetState extends State<AddTodoDialogWidget> {
       final todo = Todo(
         id: DateTime.now().toString(),
         title: title,
+        description: description,
         createdTime: DateTime.now(),
       );
 //now this validates and adds the todo but for it to be effective, we have to add it to our provider and notifyListeners

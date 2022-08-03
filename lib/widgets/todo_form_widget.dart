@@ -55,12 +55,6 @@ class TodoFormWidget extends StatelessWidget {
         maxLines: 3,
         initialValue: description,
         onChanged: onChangedDescription,
-        validator: (String? value) {
-          if (value?.isEmpty == true) {
-            return 'You have to add a description';
-          }
-          return null;
-        },
         decoration: const InputDecoration(
           border: UnderlineInputBorder(),
           labelText: 'Description',

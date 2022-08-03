@@ -46,8 +46,7 @@ class TodosProvider extends ChangeNotifier {
     //We just toggled it...notice there is a patter to this
     notifyListeners();
 
-    return todo
-        .isDone; //The function type cant be void because, isDone is of type bool
+    return todo.isDone; //The function type cant be void because, isDone is of type bool
   }
 
   void updateTodo(Todo todo, String title, String description) {
