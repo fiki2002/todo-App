@@ -32,4 +32,9 @@ class TodosProvider extends ChangeNotifier {
     //then we notifyListeners,this brings about the rebuild in the UI
     notifyListeners();
   }
+
+  void removeTodo(Todo todo) {
+    _todos.remove(todo);
+    notifyListeners();
+  }
 }

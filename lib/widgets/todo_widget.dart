@@ -4,6 +4,7 @@ import 'package:todo_list/model/todo.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../provider/todos.dart';
+import '../utils.dart';
 
 class TodoWidget extends StatelessWidget {
   final Todo todo;
@@ -87,8 +88,9 @@ class TodoWidget extends StatelessWidget {
   }
 
   void deleteTodo(BuildContext context, Todo todo) {
-  
     final provider = Provider.of<TodosProvider>(context, listen: false);
-  
+    provider.removeTodo(todo);
+
+    Utils.showSnackBar(context, 'Deleted the task');
   }
 }
