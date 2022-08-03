@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_list/model/todo.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+import '../pages/edit_todo_page.dart';
 import '../provider/todos.dart';
 import '../utils.dart';
 
@@ -15,11 +16,11 @@ class TodoWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: Slidable(
           key: UniqueKey(),
-          startActionPane: const ActionPane(
-            motion: ScrollMotion(),
+          startActionPane: ActionPane(
+            motion: const ScrollMotion(),
             children: [
               SlidableAction(
-                onPressed: null,
+                onPressed: (context) => editTodo(context, todo),
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
                 icon: Icons.edit,
@@ -28,7 +29,7 @@ class TodoWidget extends StatelessWidget {
             ],
           ),
           endActionPane: ActionPane(
-            motion: ScrollMotion(),
+            motion: const ScrollMotion(),
             children: [
               SlidableAction(
                 onPressed: (context) => deleteTodo(context, todo),
@@ -98,5 +99,13 @@ class TodoWidget extends StatelessWidget {
     provider.removeTodo(todo);
 
     Utils.showSnackBar(context, 'Deleted the task');
+  }
+
+  void editTodo(BuildContext context, Todo todo) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: ((context) => EditTodoPage(todo: todo)),
+      ),
+    );
   }
 }

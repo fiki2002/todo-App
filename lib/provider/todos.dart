@@ -26,6 +26,9 @@ class TodosProvider extends ChangeNotifier {
   ];
   //To make our list of todos public... the code below is a getter which is public and we make sure the ones that are not done yet are displayed where neccessary
   List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
+
+  List<Todo> get todosCompleted =>
+      _todos.where((todo) => todo.isDone == false).toList();
   void addTodo(Todo todo) {
     //now the todo we have added in the todo dialog, we want to add it to the list of todos avaiable
     _todos.add(todo);
@@ -43,6 +46,14 @@ class TodosProvider extends ChangeNotifier {
     //We just toggled it...notice there is a patter to this
     notifyListeners();
 
-    return todo.isDone;    //The function type cant be void because, isDone is of type bool
+    return todo
+        .isDone; //The function type cant be void because, isDone is of type bool
+  }
+
+  void updateTodo(Todo todo, String title, String description) {
+    todo.title = title;
+    todo.description = description;
+
+    notifyListeners();
   }
 }
